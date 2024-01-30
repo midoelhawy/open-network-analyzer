@@ -1,0 +1,119 @@
+[
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "NFStreamer",
+        "importPath": "nfstream",
+        "description": "nfstream",
+        "isExtraImport": true,
+        "detail": "nfstream",
+        "documentation": {}
+    },
+    {
+        "label": "create_nflow_record",
+        "importPath": "lib.lib",
+        "description": "lib.lib",
+        "isExtraImport": true,
+        "detail": "lib.lib",
+        "documentation": {}
+    },
+    {
+        "label": "NFlowTable",
+        "kind": 6,
+        "importPath": "lib.lib",
+        "description": "lib.lib",
+        "peekOfCode": "class NFlowTable(Base):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ip = Column(String)\n    src_mac = Column(String)\n    src_oui = Column(String)\n    src_port = Column(Integer)\n    dst_ip = Column(String)\n    dst_mac = Column(String)",
+        "detail": "lib.lib",
+        "documentation": {}
+    },
+    {
+        "label": "create_nflow_record",
+        "kind": 2,
+        "importPath": "lib.lib",
+        "description": "lib.lib",
+        "peekOfCode": "def create_nflow_record(nflow_instance):\n    engine = create_engine('mysql+pymysql://dev:mido@localhost:3306/flows', echo=True)\n    Base.metadata.create_all(engine)\n    Session = sessionmaker(bind=engine)\n    session = Session()\n    nflow_record = NFlowTable(\n        expiration_id=nflow_instance.expiration_id,\n        src_ip=nflow_instance.src_ip,\n        src_mac=nflow_instance.src_mac,\n        src_oui=nflow_instance.src_oui,",
+        "detail": "lib.lib",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "lib.lib",
+        "description": "lib.lib",
+        "peekOfCode": "Base = declarative_base()\nclass NFlowTable(Base):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ip = Column(String)\n    src_mac = Column(String)\n    src_oui = Column(String)\n    src_port = Column(Integer)\n    dst_ip = Column(String)",
+        "detail": "lib.lib",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"NFStreamer attributes\")\n    parser.add_argument(\n        \"--source\",\n        default=\"\",\n        help=\"Packet capture source. Pcap file path, List of pcap files path (considered as a single file) or network interface name.\",\n    )\n    parser.add_argument(\n        \"--decode_tunnels\",\n        default=True,",
+        "detail": "main",
+        "documentation": {}
+    }
+]
