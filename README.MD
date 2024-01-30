@@ -1,4 +1,4 @@
-# DEEP PACKAGE ANALYZER
+# Open network analyzer
 
 Thi is a personal project (for now)
 
