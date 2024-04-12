@@ -2,7 +2,7 @@ import argparse
 from nfstream import NFStreamer
 
 
-from lib.lib import create_nflow_record
+from lib.lib import DatabaseManager, create_nflow_record
 
 
 def main():
@@ -110,23 +110,14 @@ def main():
 
 
     online_streamer = NFStreamer(
-        source=args.source,
-        decode_tunnels=True,
-        bpf_filter=None,
-        promiscuous_mode=True,
-        snapshot_length=1536,
-        idle_timeout=120,
-        active_timeout=1800,
-        accounting_mode=0,
-        udps=None,
-        n_dissections=20,
-        statistical_analysis=False,
+        source=args.source
     )
 
-
+    db = DatabaseManager()
     print(f"Start parsing ....")
     for flow in online_streamer:
-        create_nflow_record(flow)
+        print("new flow")
+        db.create_nflow_record(flow)
         print(flow)
 
     # print(args)
