@@ -2,7 +2,7 @@ import argparse
 from nfstream import NFStreamer
 
 
-from lib.lib import DatabaseManager, create_nflow_record
+from lib.lib import DatabaseManager
 
 
 def main():
