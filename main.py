@@ -1,8 +1,9 @@
 import argparse
 from nfstream import NFStreamer
 
-
-from lib.lib import DatabaseManager
+from lib.db.DatabaseManager import DatabaseManager
+from lib.db.config.ConfigInterfaces import MySQLParams
+from lib.plugins.FlowTracker import FlowTracker
 
 
 def main():
@@ -53,11 +54,6 @@ def main():
         help="Specify the accounting mode that will be used to report bytes related features (0: Link layer, 1: IP layer, 2: Transport layer, 3: Payload).",
     )
     parser.add_argument(
-        "--udps",
-        default=None,
-        help="Specify user defined NFPlugins used to extend NFStreamer.",
-    )
-    parser.add_argument(
         "--n_dissections",
         default=20,
         type=int,
@@ -65,12 +61,12 @@ def main():
     )
     parser.add_argument(
         "--statistical_analysis",
-        default=False,
+        default=True,
         help="Enable/Disable post-mortem flow statistical analysis.",
     )
     parser.add_argument(
         "--splt_analysis",
-        default=0,
+        default=1,
         type=int,
         help="Specify the sequence of first packets length for early statistical analysis. When set to 0, splt_analysis is disabled.",
     )
@@ -105,22 +101,42 @@ def main():
         help="Set the polling interval in milliseconds for system process mapping feature (0 is the maximum achievable rate).",
     )
 
+
     args = parser.parse_args()
 
-
-
     online_streamer = NFStreamer(
-        source=args.source
+        source=args.source,
+        decode_tunnels=args.decode_tunnels,
+        bpf_filter=args.bpf_filter,
+        promiscuous_mode=args.promiscuous_mode,
+        snapshot_length=args.snapshot_length,
+        idle_timeout=args.idle_timeout,
+        active_timeout=args.active_timeout,
+        accounting_mode=args.accounting_mode,
+        n_dissections=args.n_dissections,
+        statistical_analysis=args.statistical_analysis,
+        splt_analysis=args.splt_analysis,
+        n_meters=args.n_meters,
+        max_nflows=args.max_nflows,
+        performance_report=args.performance_report,
+        system_visibility_mode=args.system_visibility_mode,
+        system_visibility_poll_ms=args.system_visibility_poll_ms,
+        udps= FlowTracker(limit=1000)
     )
 
-    db = DatabaseManager()
+    mysql_config = MySQLParams(
+        user="dev",
+        password="mido",
+        host="localhost",
+        port=3306
+    )
+
+    db = DatabaseManager(db_type="mysql", db_params=mysql_config)
     print(f"Start parsing ....")
     for flow in online_streamer:
         print("new flow")
-        db.create_nflow_record(flow)
+        db.add_flow(flow)
         print(flow)
-
-    # print(args)
 
 
 if __name__ == "__main__":

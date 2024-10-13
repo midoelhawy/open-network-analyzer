@@ -1,6 +1,94 @@
 [
     {
+        "label": "DatabaseClient",
+        "importPath": "lib.db.client.DatabaseClient",
+        "description": "lib.db.client.DatabaseClient",
+        "isExtraImport": true,
+        "detail": "lib.db.client.DatabaseClient",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseClient",
+        "importPath": "lib.db.client.DatabaseClient",
+        "description": "lib.db.client.DatabaseClient",
+        "isExtraImport": true,
+        "detail": "lib.db.client.DatabaseClient",
+        "documentation": {}
+    },
+    {
+        "label": "ClickhouseParams",
+        "importPath": "lib.db.config.ConfigInterfaces",
+        "description": "lib.db.config.ConfigInterfaces",
+        "isExtraImport": true,
+        "detail": "lib.db.config.ConfigInterfaces",
+        "documentation": {}
+    },
+    {
+        "label": "MySQLParams",
+        "importPath": "lib.db.config.ConfigInterfaces",
+        "description": "lib.db.config.ConfigInterfaces",
+        "isExtraImport": true,
+        "detail": "lib.db.config.ConfigInterfaces",
+        "documentation": {}
+    },
+    {
+        "label": "MySQLParams",
+        "importPath": "lib.db.config.ConfigInterfaces",
+        "description": "lib.db.config.ConfigInterfaces",
+        "isExtraImport": true,
+        "detail": "lib.db.config.ConfigInterfaces",
+        "documentation": {}
+    },
+    {
+        "label": "ClickhouseParams",
+        "importPath": "lib.db.config.ConfigInterfaces",
+        "description": "lib.db.config.ConfigInterfaces",
+        "isExtraImport": true,
+        "detail": "lib.db.config.ConfigInterfaces",
+        "documentation": {}
+    },
+    {
+        "label": "MySQLParams",
+        "importPath": "lib.db.config.ConfigInterfaces",
+        "description": "lib.db.config.ConfigInterfaces",
+        "isExtraImport": true,
+        "detail": "lib.db.config.ConfigInterfaces",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "venv",
+        "description": "venv",
+        "isExtraImport": true,
+        "detail": "venv",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "venv",
+        "description": "venv",
+        "isExtraImport": true,
+        "detail": "venv",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "venv",
+        "description": "venv",
+        "isExtraImport": true,
+        "detail": "venv",
+        "documentation": {}
+    },
+    {
         "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "exists",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -32,11 +120,115 @@
         "documentation": {}
     },
     {
-        "label": "DateTime",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
         "isExtraImport": true,
-        "detail": "sqlalchemy",
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "database_exists",
+        "importPath": "sqlalchemy_utils",
+        "description": "sqlalchemy_utils",
+        "isExtraImport": true,
+        "detail": "sqlalchemy_utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_database",
+        "importPath": "sqlalchemy_utils",
+        "description": "sqlalchemy_utils",
+        "isExtraImport": true,
+        "detail": "sqlalchemy_utils",
+        "documentation": {}
+    },
+    {
+        "label": "NFlowInstance",
+        "importPath": "lib.db",
+        "description": "lib.db",
+        "isExtraImport": true,
+        "detail": "lib.db",
+        "documentation": {}
+    },
+    {
+        "label": "NFlowInterface",
+        "importPath": "lib.db",
+        "description": "lib.db",
+        "isExtraImport": true,
+        "detail": "lib.db",
+        "documentation": {}
+    },
+    {
+        "label": "NFlowInstance",
+        "importPath": "lib.db",
+        "description": "lib.db",
+        "isExtraImport": true,
+        "detail": "lib.db",
+        "documentation": {}
+    },
+    {
+        "label": "AlchemyBaseDeclarative",
+        "importPath": "lib.db.NFlowInterface",
+        "description": "lib.db.NFlowInterface",
+        "isExtraImport": true,
+        "detail": "lib.db.NFlowInterface",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "overload",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "ClickHouseClient",
+        "importPath": "lib.db.client.ClickHouseClient",
+        "description": "lib.db.client.ClickHouseClient",
+        "isExtraImport": true,
+        "detail": "lib.db.client.ClickHouseClient",
+        "documentation": {}
+    },
+    {
+        "label": "MySQLClient",
+        "importPath": "lib.db.client.MySQLClient",
+        "description": "lib.db.client.MySQLClient",
+        "isExtraImport": true,
+        "detail": "lib.db.client.MySQLClient",
         "documentation": {}
     },
     {
@@ -48,11 +240,72 @@
         "documentation": {}
     },
     {
-        "label": "sessionmaker",
-        "importPath": "sqlalchemy.orm",
-        "description": "sqlalchemy.orm",
+        "label": "datetime",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "sqlalchemy.orm",
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "NFStreamer",
+        "importPath": "nfstream",
+        "description": "nfstream",
+        "isExtraImport": true,
+        "detail": "nfstream",
+        "documentation": {}
+    },
+    {
+        "label": "NFStreamer",
+        "importPath": "nfstream",
+        "description": "nfstream",
+        "isExtraImport": true,
+        "detail": "nfstream",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
         "documentation": {}
     },
     {
@@ -65,46 +318,209 @@
         "documentation": {}
     },
     {
-        "label": "NFStreamer",
-        "importPath": "nfstream",
-        "description": "nfstream",
+        "label": "DatabaseManager",
+        "importPath": "lib.db.DatabaseManager",
+        "description": "lib.db.DatabaseManager",
         "isExtraImport": true,
-        "detail": "nfstream",
+        "detail": "lib.db.DatabaseManager",
         "documentation": {}
     },
     {
-        "label": "create_nflow_record",
-        "importPath": "lib.lib",
-        "description": "lib.lib",
-        "isExtraImport": true,
-        "detail": "lib.lib",
-        "documentation": {}
-    },
-    {
-        "label": "NFlowTable",
+        "label": "ClickHouseClient",
         "kind": 6,
-        "importPath": "lib.lib",
-        "description": "lib.lib",
-        "peekOfCode": "class NFlowTable(Base):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ip = Column(String)\n    src_mac = Column(String)\n    src_oui = Column(String)\n    src_port = Column(Integer)\n    dst_ip = Column(String)\n    dst_mac = Column(String)",
-        "detail": "lib.lib",
+        "importPath": "lib.db.client.ClickHouseClient",
+        "description": "lib.db.client.ClickHouseClient",
+        "peekOfCode": "class ClickHouseClient(DatabaseClient):\n    def __init__(self, db_params: ClickhouseParams) -> None:\n        db_url = f'clickhouse://{db_params.user}:{db_params.password}@{db_params.host}:{db_params.port}/{db_params.dbname}'\n        super().__init__(db_url)",
+        "detail": "lib.db.client.ClickHouseClient",
         "documentation": {}
     },
     {
-        "label": "create_nflow_record",
-        "kind": 2,
-        "importPath": "lib.lib",
-        "description": "lib.lib",
-        "peekOfCode": "def create_nflow_record(nflow_instance):\n    engine = create_engine('mysql+pymysql://dev:mido@localhost:3306/flows', echo=True)\n    Base.metadata.create_all(engine)\n    Session = sessionmaker(bind=engine)\n    session = Session()\n    nflow_record = NFlowTable(\n        expiration_id=nflow_instance.expiration_id,\n        src_ip=nflow_instance.src_ip,\n        src_mac=nflow_instance.src_mac,\n        src_oui=nflow_instance.src_oui,",
-        "detail": "lib.lib",
+        "label": "DatabaseClient",
+        "kind": 6,
+        "importPath": "lib.db.client.DatabaseClient",
+        "description": "lib.db.client.DatabaseClient",
+        "peekOfCode": "class DatabaseClient:\n    db_url:str\n    def __init__(self, db_url) -> None:\n        self.db_url = db_url\n        self.engine = create_engine(db_url)\n        self.Session = sessionmaker(bind=self.engine)\n        self.init_db()\n    def init_db(self) -> None:\n        logger.info(\"Initializing database\")\n        if not database_exists(self.db_url):",
+        "detail": "lib.db.client.DatabaseClient",
         "documentation": {}
     },
     {
-        "label": "Base",
+        "label": "MySQLClient",
+        "kind": 6,
+        "importPath": "lib.db.client.MySQLClient",
+        "description": "lib.db.client.MySQLClient",
+        "peekOfCode": "class MySQLClient(DatabaseClient):\n    def __init__(self, db_params:MySQLParams) -> None:\n        db_url = f'mysql+pymysql://{db_params.user}:{db_params.password}@{db_params.host}/{db_params.dbname}'\n        logger.warn(db_url)\n        super().__init__(db_url)",
+        "detail": "lib.db.client.MySQLClient",
+        "documentation": {}
+    },
+    {
+        "label": "MySQLParams",
+        "kind": 6,
+        "importPath": "lib.db.config.ConfigInterfaces",
+        "description": "lib.db.config.ConfigInterfaces",
+        "peekOfCode": "class MySQLParams:\n    def __init__(\n        self,\n        user: str,\n        password: str,\n        host: str,\n        dbname: Optional[str] = \"open-network-analyzer\",\n        port: Optional[int] = 3306,\n        charset: str = 'utf8mb4'\n    ) -> None:",
+        "detail": "lib.db.config.ConfigInterfaces",
+        "documentation": {}
+    },
+    {
+        "label": "ClickhouseParams",
+        "kind": 6,
+        "importPath": "lib.db.config.ConfigInterfaces",
+        "description": "lib.db.config.ConfigInterfaces",
+        "peekOfCode": "class ClickhouseParams:\n    def __init__(\n        self,\n        user: str,\n        password: str,\n        host: str,\n        dbname: Optional[str] = \"open-network-analyzer\",\n        port: Optional[int] = 8123\n    ) -> None:\n        self.user: str = user",
+        "detail": "lib.db.config.ConfigInterfaces",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseManager",
+        "kind": 6,
+        "importPath": "lib.db.DatabaseManager",
+        "description": "lib.db.DatabaseManager",
+        "peekOfCode": "class DatabaseManager:\n    @overload\n    def __init__(self, db_type: Literal[\"mysql\"], db_params: MySQLParams) -> None:\n        ...\n    @overload\n    def __init__(self, db_type: Literal[\"clickhouse\"], db_params: ClickhouseParams) -> None:\n        ...\n    def __init__(self, db_type: Literal[\"mysql\", \"clickhouse\"],\n                 db_params: Union[MySQLParams, ClickhouseParams]) -> None:\n        if db_type == 'mysql':",
+        "detail": "lib.db.DatabaseManager",
+        "documentation": {}
+    },
+    {
+        "label": "NFlowInstance",
+        "kind": 6,
+        "importPath": "lib.db.NFlowInstance",
+        "description": "lib.db.NFlowInstance",
+        "peekOfCode": "class NFlowInstance:\n    __slots__ = (\n        'expiration_id', 'src_ip', 'src_mac', 'src_oui', 'src_port', 'dst_ip',\n        'dst_mac', 'dst_oui', 'dst_port', 'protocol', 'ip_version', 'vlan_id',\n        'tunnel_id', 'bidirectional_first_seen_ms', 'bidirectional_last_seen_ms',\n        'bidirectional_duration_ms', 'bidirectional_packets', 'bidirectional_bytes',\n        'src2dst_first_seen_ms', 'src2dst_last_seen_ms', 'src2dst_duration_ms',\n        'src2dst_packets', 'src2dst_bytes', 'dst2src_first_seen_ms', 'dst2src_last_seen_ms',\n        'dst2src_duration_ms', 'dst2src_packets', 'dst2src_bytes', 'application_name',\n        'application_category_name', 'application_is_guessed', 'application_confidence',",
+        "detail": "lib.db.NFlowInstance",
+        "documentation": {}
+    },
+    {
+        "label": "NFlowInterface",
+        "kind": 6,
+        "importPath": "lib.db.NFlowInterface",
+        "description": "lib.db.NFlowInterface",
+        "peekOfCode": "class NFlowInterface(AlchemyBaseDeclarative):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ipv4 = Column(String(255), nullable=True)\n    src_ipv6 = Column(String(255), nullable=True)\n    src_mac = Column(String(255), nullable=True)\n    src_oui = Column(String(255), nullable=True)\n    src_port = Column(Integer, nullable=True)\n    dst_ipv4 = Column(String(255), nullable=True)",
+        "detail": "lib.db.NFlowInterface",
+        "documentation": {}
+    },
+    {
+        "label": "AlchemyBaseDeclarative",
         "kind": 5,
-        "importPath": "lib.lib",
-        "description": "lib.lib",
-        "peekOfCode": "Base = declarative_base()\nclass NFlowTable(Base):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ip = Column(String)\n    src_mac = Column(String)\n    src_oui = Column(String)\n    src_port = Column(Integer)\n    dst_ip = Column(String)",
-        "detail": "lib.lib",
+        "importPath": "lib.db.NFlowInterface",
+        "description": "lib.db.NFlowInterface",
+        "peekOfCode": "AlchemyBaseDeclarative = declarative_base()\nclass NFlowInterface(AlchemyBaseDeclarative):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ipv4 = Column(String(255), nullable=True)\n    src_ipv6 = Column(String(255), nullable=True)\n    src_mac = Column(String(255), nullable=True)\n    src_oui = Column(String(255), nullable=True)\n    src_port = Column(Integer, nullable=True)",
+        "detail": "lib.db.NFlowInterface",
+        "documentation": {}
+    },
+    {
+        "label": "OnFlowInit",
+        "kind": 6,
+        "importPath": "lib.plugins.OnFlowInit",
+        "description": "lib.plugins.OnFlowInit",
+        "peekOfCode": "class OnFlowInit(object):\n    \"\"\" OnFlowInit class: Main entry point to extend NFStream \"\"\"\n    def __init__(self, **kwargs):\n        \"\"\"\n        NFPlugin Parameters:\n        kwargs : user defined named arguments that will be stored as Plugin attributes\n        \"\"\"\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n    def on_init(self, packet, flow):",
+        "detail": "lib.plugins.OnFlowInit",
+        "documentation": {}
+    },
+    {
+        "label": "convertNflowToDct",
+        "kind": 2,
+        "importPath": "test.pacap-ipsec",
+        "description": "test.pacap-ipsec",
+        "peekOfCode": "def convertNflowToDct(obj:NFStreamer):\n    newdict = {}\n    for key in dir(obj):\n        if not key.startswith('__') and key != \"_C\":\n            try:\n                prop = getattr(obj, key)\n                if type(prop) is str or type(prop) is int or type(prop) is float:\n                    newdict[key] = prop\n                #newdict[key] = prop\n            except:",
+        "detail": "test.pacap-ipsec",
+        "documentation": {}
+    },
+    {
+        "label": "online_streamer",
+        "kind": 5,
+        "importPath": "test.pacap-ipsec",
+        "description": "test.pacap-ipsec",
+        "peekOfCode": "online_streamer = NFStreamer(\n    source=\"/home/ahmedhekal/Downloads/pcap/merged.pcap\",\n    decode_tunnels=True,\n    bpf_filter=None,\n    promiscuous_mode=True,\n    snapshot_length=1536,\n    idle_timeout=120,\n    active_timeout=1800,\n    accounting_mode=0,\n    udps=None,",
+        "detail": "test.pacap-ipsec",
+        "documentation": {}
+    },
+    {
+        "label": "flows_to_be_analyzed",
+        "kind": 5,
+        "importPath": "test.pacap-ipsec",
+        "description": "test.pacap-ipsec",
+        "peekOfCode": "flows_to_be_analyzed = []\ndef convertNflowToDct(obj:NFStreamer):\n    newdict = {}\n    for key in dir(obj):\n        if not key.startswith('__') and key != \"_C\":\n            try:\n                prop = getattr(obj, key)\n                if type(prop) is str or type(prop) is int or type(prop) is float:\n                    newdict[key] = prop\n                #newdict[key] = prop",
+        "detail": "test.pacap-ipsec",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.10/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "venv.bin.activate_this",
+        "description": "venv.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "venv.bin.activate_this",
         "documentation": {}
     },
     {

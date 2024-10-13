@@ -1,2 +1,4 @@
 nfstream>=6
 sqlalchemy
+pymysql
+sqlalchemy-utils

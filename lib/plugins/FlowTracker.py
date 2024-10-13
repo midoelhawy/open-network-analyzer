@@ -1,10 +1,16 @@
-class OnFlowInit(object):
+import uuid
+
+from nfstream import NFPlugin
+
+
+class FlowTracker(NFPlugin):
     """ OnFlowInit class: Main entry point to extend NFStream """
     def __init__(self, **kwargs):
         """
         NFPlugin Parameters:
         kwargs : user defined named arguments that will be stored as Plugin attributes
         """
+        super().__init__(**kwargs)
         for key, value in kwargs.items():
             setattr(self, key, value)
 
@@ -20,8 +26,8 @@ class OnFlowInit(object):
                     flow.udps.packet_40_count = 0
         ----------------------------------------------------------------
         """
-        
-        print(f"on_init")
+        flow.uuid = uuid.uuid4()
+        print(f"on_init => {flow.uuid}",)
 
     def on_update(self, packet, flow):
         """
@@ -32,7 +38,7 @@ class OnFlowInit(object):
                     flow.udps.packet_40_count += 1
         ----------------------------------------------------------------
         """
-        print(f"on_update")
+        print(f"on_update=> ${flow.uuid}")
 
     def on_expire(self, flow):
         """
@@ -42,7 +48,7 @@ class OnFlowInit(object):
                     flow.udps.magic_message = "YES"
         ----------------------------------------------------------------
         """
-        print(f"on_expire")
+        print(f"on_expire=> ${flow.uuid}")
 
     def cleanup(self):
         """
