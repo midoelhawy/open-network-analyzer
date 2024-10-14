@@ -152,14 +152,6 @@
         "documentation": {}
     },
     {
-        "label": "NFlowInterface",
-        "importPath": "lib.db",
-        "description": "lib.db",
-        "isExtraImport": true,
-        "detail": "lib.db",
-        "documentation": {}
-    },
-    {
         "label": "NFlowInstance",
         "importPath": "lib.db",
         "description": "lib.db",
@@ -169,6 +161,14 @@
     },
     {
         "label": "AlchemyBaseDeclarative",
+        "importPath": "lib.db.NFlowInterface",
+        "description": "lib.db.NFlowInterface",
+        "isExtraImport": true,
+        "detail": "lib.db.NFlowInterface",
+        "documentation": {}
+    },
+    {
+        "label": "NFlowInterface",
         "importPath": "lib.db.NFlowInterface",
         "description": "lib.db.NFlowInterface",
         "isExtraImport": true,
@@ -240,28 +240,45 @@
         "documentation": {}
     },
     {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "NFPlugin",
+        "importPath": "nfstream",
+        "description": "nfstream",
+        "isExtraImport": true,
+        "detail": "nfstream",
+        "documentation": {}
+    },
+    {
+        "label": "NFStreamer",
+        "importPath": "nfstream",
+        "description": "nfstream",
+        "isExtraImport": true,
+        "detail": "nfstream",
+        "documentation": {}
+    },
+    {
+        "label": "NFStreamer",
+        "importPath": "nfstream",
+        "description": "nfstream",
+        "isExtraImport": true,
+        "detail": "nfstream",
+        "documentation": {}
+    },
+    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "datetime",
         "description": "datetime",
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "NFStreamer",
-        "importPath": "nfstream",
-        "description": "nfstream",
-        "isExtraImport": true,
-        "detail": "nfstream",
-        "documentation": {}
-    },
-    {
-        "label": "NFStreamer",
-        "importPath": "nfstream",
-        "description": "nfstream",
-        "isExtraImport": true,
-        "detail": "nfstream",
         "documentation": {}
     },
     {
@@ -323,6 +340,14 @@
         "description": "lib.db.DatabaseManager",
         "isExtraImport": true,
         "detail": "lib.db.DatabaseManager",
+        "documentation": {}
+    },
+    {
+        "label": "FlowTracker",
+        "importPath": "lib.plugins.FlowTracker",
+        "description": "lib.plugins.FlowTracker",
+        "isExtraImport": true,
+        "detail": "lib.plugins.FlowTracker",
         "documentation": {}
     },
     {
@@ -407,12 +432,12 @@
         "documentation": {}
     },
     {
-        "label": "OnFlowInit",
+        "label": "FlowTracker",
         "kind": 6,
-        "importPath": "lib.plugins.OnFlowInit",
-        "description": "lib.plugins.OnFlowInit",
-        "peekOfCode": "class OnFlowInit(object):\n    \"\"\" OnFlowInit class: Main entry point to extend NFStream \"\"\"\n    def __init__(self, **kwargs):\n        \"\"\"\n        NFPlugin Parameters:\n        kwargs : user defined named arguments that will be stored as Plugin attributes\n        \"\"\"\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n    def on_init(self, packet, flow):",
-        "detail": "lib.plugins.OnFlowInit",
+        "importPath": "lib.plugins.FlowTracker",
+        "description": "lib.plugins.FlowTracker",
+        "peekOfCode": "class FlowTracker(NFPlugin):\n    \"\"\" OnFlowInit class: Main entry point to extend NFStream \"\"\"\n    def __init__(self, **kwargs):\n        \"\"\"\n        NFPlugin Parameters:\n        kwargs : user defined named arguments that will be stored as Plugin attributes\n        \"\"\"\n        super().__init__(**kwargs)\n        for key, value in kwargs.items():\n            setattr(self, key, value)",
+        "detail": "lib.plugins.FlowTracker",
         "documentation": {}
     },
     {
