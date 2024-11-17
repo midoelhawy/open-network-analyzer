@@ -104,6 +104,14 @@ def main():
 
     args = parser.parse_args()
 
+    if args.source == "":
+        # get the main network interface
+        import netifaces
+        args.source = netifaces.gateways()['default'][netifaces.AF_INET][1]
+        print(f"Source interface: {args.source}")
+
+
+
     online_streamer = NFStreamer(
         source=args.source,
         decode_tunnels=args.decode_tunnels,
