@@ -1,4 +1,5 @@
 from typing import Optional
+import uuid
 
 
 class NFlowInstance:
@@ -11,12 +12,13 @@ class NFlowInstance:
         'src2dst_packets', 'src2dst_bytes', 'dst2src_first_seen_ms', 'dst2src_last_seen_ms',
         'dst2src_duration_ms', 'dst2src_packets', 'dst2src_bytes', 'application_name',
         'application_category_name', 'application_is_guessed', 'application_confidence',
-        'requested_server_name', 'client_fingerprint', 'server_fingerprint', 'user_agent', 'content_type'
+        'requested_server_name', 'client_fingerprint', 'server_fingerprint', 'user_agent', 'content_type','uuid'
     )
 
     def __init__(
         self,
         expiration_id: int,
+        uuid: str,
         src_ip: str,
         src_mac: str,
         src_oui: str,
@@ -54,6 +56,7 @@ class NFlowInstance:
         user_agent: str,
         content_type: str
     ) -> None:
+        self.uuid = uuid
         self.expiration_id = expiration_id
         self.src_ip = src_ip
         self.src_mac = src_mac

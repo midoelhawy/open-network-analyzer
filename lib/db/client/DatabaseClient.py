@@ -1,3 +1,4 @@
+import uuid
 from venv import logger
 
 from sqlalchemy import create_engine, exists
@@ -40,6 +41,7 @@ class DatabaseClient:
 
         if not existing_flow:
             new_flow = NFlowInterface(
+                uuid=nflow_instance.udps.flow_uuid,
                 expiration_id=nflow_instance.expiration_id,
                 src_ipv4=nflow_instance.src_ip if nflow_instance.ip_version == 4 else None,
                 src_ipv6=nflow_instance.src_ip if nflow_instance.ip_version == 6 else None,

@@ -7,6 +7,7 @@ class NFlowInterface(AlchemyBaseDeclarative):
     __tablename__ = 'nflows'
 
     id = Column(Integer, primary_key=True)
+    uuid = Column(String(255), primary_key=True, index=True)
     expiration_id = Column(Integer)
     src_ipv4 = Column(String(255), nullable=True)
     src_ipv6 = Column(String(255), nullable=True)

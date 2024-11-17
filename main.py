@@ -112,6 +112,15 @@ def main():
 
 
 
+    mysql_config = MySQLParams(
+        user="dev",
+        password="mido",
+        host="localhost",
+        port=3306
+    )
+
+    db = DatabaseManager(db_type="mysql", db_params=mysql_config)
+
     online_streamer = NFStreamer(
         source=args.source,
         decode_tunnels=args.decode_tunnels,
@@ -129,17 +138,10 @@ def main():
         performance_report=args.performance_report,
         system_visibility_mode=args.system_visibility_mode,
         system_visibility_poll_ms=args.system_visibility_poll_ms,
-        udps= FlowTracker(limit=1000)
+        udps= FlowTracker(limit=1000,dbManager=db)
     )
 
-    mysql_config = MySQLParams(
-        user="dev",
-        password="mido",
-        host="localhost",
-        port=3306
-    )
 
-    db = DatabaseManager(db_type="mysql", db_params=mysql_config)
     print(f"Start parsing ....")
     for flow in online_streamer:
         print("new flow")

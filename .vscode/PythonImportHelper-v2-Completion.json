@@ -56,6 +56,15 @@
         "documentation": {}
     },
     {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
         "label": "logger",
         "importPath": "venv",
         "description": "venv",
@@ -240,15 +249,6 @@
         "documentation": {}
     },
     {
-        "label": "uuid",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "uuid",
-        "description": "uuid",
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
         "label": "NFPlugin",
         "importPath": "nfstream",
         "description": "nfstream",
@@ -270,6 +270,31 @@
         "description": "nfstream",
         "isExtraImport": true,
         "detail": "nfstream",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseManager",
+        "importPath": "lib.db.DatabaseManager",
+        "description": "lib.db.DatabaseManager",
+        "isExtraImport": true,
+        "detail": "lib.db.DatabaseManager",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseManager",
+        "importPath": "lib.db.DatabaseManager",
+        "description": "lib.db.DatabaseManager",
+        "isExtraImport": true,
+        "detail": "lib.db.DatabaseManager",
         "documentation": {}
     },
     {
@@ -332,14 +357,6 @@
         "importPath": "argparse",
         "description": "argparse",
         "detail": "argparse",
-        "documentation": {}
-    },
-    {
-        "label": "DatabaseManager",
-        "importPath": "lib.db.DatabaseManager",
-        "description": "lib.db.DatabaseManager",
-        "isExtraImport": true,
-        "detail": "lib.db.DatabaseManager",
         "documentation": {}
     },
     {
@@ -418,7 +435,7 @@
         "kind": 6,
         "importPath": "lib.db.NFlowInterface",
         "description": "lib.db.NFlowInterface",
-        "peekOfCode": "class NFlowInterface(AlchemyBaseDeclarative):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ipv4 = Column(String(255), nullable=True)\n    src_ipv6 = Column(String(255), nullable=True)\n    src_mac = Column(String(255), nullable=True)\n    src_oui = Column(String(255), nullable=True)\n    src_port = Column(Integer, nullable=True)\n    dst_ipv4 = Column(String(255), nullable=True)",
+        "peekOfCode": "class NFlowInterface(AlchemyBaseDeclarative):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    uuid = Column(String(255), primary_key=True, index=True)\n    expiration_id = Column(Integer)\n    src_ipv4 = Column(String(255), nullable=True)\n    src_ipv6 = Column(String(255), nullable=True)\n    src_mac = Column(String(255), nullable=True)\n    src_oui = Column(String(255), nullable=True)\n    src_port = Column(Integer, nullable=True)",
         "detail": "lib.db.NFlowInterface",
         "documentation": {}
     },
@@ -427,7 +444,7 @@
         "kind": 5,
         "importPath": "lib.db.NFlowInterface",
         "description": "lib.db.NFlowInterface",
-        "peekOfCode": "AlchemyBaseDeclarative = declarative_base()\nclass NFlowInterface(AlchemyBaseDeclarative):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    expiration_id = Column(Integer)\n    src_ipv4 = Column(String(255), nullable=True)\n    src_ipv6 = Column(String(255), nullable=True)\n    src_mac = Column(String(255), nullable=True)\n    src_oui = Column(String(255), nullable=True)\n    src_port = Column(Integer, nullable=True)",
+        "peekOfCode": "AlchemyBaseDeclarative = declarative_base()\nclass NFlowInterface(AlchemyBaseDeclarative):\n    __tablename__ = 'nflows'\n    id = Column(Integer, primary_key=True)\n    uuid = Column(String(255), primary_key=True, index=True)\n    expiration_id = Column(Integer)\n    src_ipv4 = Column(String(255), nullable=True)\n    src_ipv6 = Column(String(255), nullable=True)\n    src_mac = Column(String(255), nullable=True)\n    src_oui = Column(String(255), nullable=True)",
         "detail": "lib.db.NFlowInterface",
         "documentation": {}
     },
@@ -436,7 +453,7 @@
         "kind": 6,
         "importPath": "lib.plugins.FlowTracker",
         "description": "lib.plugins.FlowTracker",
-        "peekOfCode": "class FlowTracker(NFPlugin):\n    \"\"\" OnFlowInit class: Main entry point to extend NFStream \"\"\"\n    def __init__(self, **kwargs):\n        \"\"\"\n        NFPlugin Parameters:\n        kwargs : user defined named arguments that will be stored as Plugin attributes\n        \"\"\"\n        super().__init__(**kwargs)\n        for key, value in kwargs.items():\n            setattr(self, key, value)",
+        "peekOfCode": "class FlowTracker(NFPlugin):\n    \"\"\" FlowTracker class: Main entry point to extend NFStream \"\"\"\n    dbManager:DatabaseManager\n    def __init__(self, **kwargs):\n        super().__init__(**kwargs)\n        for key, value in kwargs.items():\n            setattr(self, key, value)\n    def on_init(self, packet, flow):\n        flow.udps.flow_uuid = uuid.uuid()\n        flow.udps.last_db_update = time.time()",
         "detail": "lib.plugins.FlowTracker",
         "documentation": {}
     },

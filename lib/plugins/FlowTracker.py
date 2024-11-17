@@ -1,60 +1,46 @@
 import uuid
-
 from nfstream import NFPlugin
+import time
 
-
+from lib.db.DatabaseManager import DatabaseManager
 class FlowTracker(NFPlugin):
-    """ OnFlowInit class: Main entry point to extend NFStream """
+    """ FlowTracker class: Main entry point to extend NFStream """
+    dbManager:DatabaseManager
     def __init__(self, **kwargs):
-        """
-        NFPlugin Parameters:
-        kwargs : user defined named arguments that will be stored as Plugin attributes
-        """
         super().__init__(**kwargs)
         for key, value in kwargs.items():
             setattr(self, key, value)
+        
 
     def on_init(self, packet, flow):
-        """
-        on_init(self, packet, flow): Method called at flow creation.
-        You must initiate your udps values if you plan to compute ones.
-        Example: -------------------------------------------------------
-                 flow.udps.magic_message = "NO"
-                 if packet.raw_size == 40:
-                    flow.udps.packet_40_count = 1
-                 else:
-                    flow.udps.packet_40_count = 0
-        ----------------------------------------------------------------
-        """
-        flow.uuid = uuid.uuid4()
-        print(f"on_init => {flow.uuid}",)
+        flow.udps.flow_uuid = uuid.uuid()
+        flow.udps.last_db_update = time.time()
+        print(f"on_init => Flow ID: {flow.id}")
+        self.dbManager.add_flow()
+        
+        
 
     def on_update(self, packet, flow):
         """
         on_update(self, packet, flow): Method called to update each flow 
                                        with its belonging packet.
-        Example: -------------------------------------------------------
-                 if packet.raw_size == 40:
-                    flow.udps.packet_40_count += 1
-        ----------------------------------------------------------------
         """
-        print(f"on_update=> ${flow.uuid}")
+        #print(f"on_update => Flow ID: {flow.udps.flow_uuid},lastDbUpdate: {flow.udps.last_db_update}")
+        
+        # check if last db update is more then 100 seconds ago 
+        if time.time() - flow.udps.last_db_update > 10:
+            # update database
+            print(f"update database")
+            flow.udps.last_db_update = time.time()
 
     def on_expire(self, flow):
         """
-        on_expire(self, flow):      Method called at flow expiration.
-        Example: -------------------------------------------------------
-                 if flow.udps.packet_40_count >= 10:
-                    flow.udps.magic_message = "YES"
-        ----------------------------------------------------------------
+        on_expire(self, flow): Method called at flow expiration.
         """
-        print(f"on_expire=> ${flow.uuid}")
+        print(f"on_expire => Flow UUID: {flow.udps.flow_uuid}")
 
     def cleanup(self):
         """
-        cleanup(self):               Method called for plugin cleanup.
-        Example: -------------------------------------------------------
-                 del self.large_dict_passed_as_plugin_attribute
-        ----------------------------------------------------------------
+        cleanup(self): Method called for plugin cleanup.
         """
         print(f"cleanup")
