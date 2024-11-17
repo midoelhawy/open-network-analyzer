@@ -1,8 +1,16 @@
 from typing import Optional
 import uuid
+# add enum with  status # status | init,active,finished
+
+class FLOW_STATUS:
+    INIT = 0
+    ACTIVE = 1
+    FINISHED = 2
 
 
 class NFlowInstance:
+    
+    
     __slots__ = (
         'expiration_id', 'src_ip', 'src_mac', 'src_oui', 'src_port', 'dst_ip',
         'dst_mac', 'dst_oui', 'dst_port', 'protocol', 'ip_version', 'vlan_id',

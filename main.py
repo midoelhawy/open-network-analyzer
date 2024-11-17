@@ -145,7 +145,7 @@ def main():
     print(f"Start parsing ....")
     for flow in online_streamer:
         print("new flow")
-        db.add_flow(flow)
+        # db.add_flow(flow)
         print(flow)
 
 

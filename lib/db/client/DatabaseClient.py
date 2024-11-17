@@ -1,4 +1,3 @@
-import uuid
 from venv import logger
 
 from sqlalchemy import create_engine, exists
@@ -23,7 +22,7 @@ class DatabaseClient:
             create_database(self.db_url)
         AlchemyBaseDeclarative.metadata.create_all(self.engine)
 
-    def add_flow(self, nflow_instance: 'NFlowInstance') -> None:
+    def add_flow(self, nflow_instance: 'NFlowInstance',status:int) -> None:
         session = self.Session()
 
         if nflow_instance.ip_version == 4:
@@ -35,11 +34,40 @@ class DatabaseClient:
         else:
             raise ValueError("Invalid IP version")
 
-        existing_flow = session.query(exists().where(src_ip_col == nflow_instance.src_ip)
-                                      .where(dst_ip_col == nflow_instance.dst_ip)
-                                      .where(NFlowInterface.src2dst_first_seen == int(nflow_instance.src2dst_first_seen_ms / 1000))).scalar()
+        existing_flow = session.query(NFlowInterface).filter(
+            src_ip_col == nflow_instance.src_ip,
+            dst_ip_col == nflow_instance.dst_ip,
+            NFlowInterface.uuid == nflow_instance.udps.flow_uuid
+        ).one_or_none()
 
-        if not existing_flow:
+        if existing_flow:
+            existing_flow.expiration_id = nflow_instance.expiration_id
+            existing_flow.status = status
+            existing_flow.bidirectional_first_seen = int(nflow_instance.bidirectional_first_seen_ms / 1000)
+            existing_flow.bidirectional_last_seen = int(nflow_instance.bidirectional_last_seen_ms / 1000)
+            existing_flow.bidirectional_duration = int(nflow_instance.bidirectional_duration_ms / 1000)
+            existing_flow.bidirectional_packets = nflow_instance.bidirectional_packets
+            existing_flow.bidirectional_bytes = nflow_instance.bidirectional_bytes
+            existing_flow.src2dst_first_seen = int(nflow_instance.src2dst_first_seen_ms / 1000)
+            existing_flow.src2dst_last_seen = int(nflow_instance.src2dst_last_seen_ms / 1000)
+            existing_flow.src2dst_duration = int(nflow_instance.src2dst_duration_ms / 1000)
+            existing_flow.src2dst_packets = nflow_instance.src2dst_packets
+            existing_flow.src2dst_bytes = nflow_instance.src2dst_bytes
+            existing_flow.dst2src_first_seen = int(nflow_instance.dst2src_first_seen_ms / 1000)
+            existing_flow.dst2src_last_seen = int(nflow_instance.dst2src_last_seen_ms / 1000)
+            existing_flow.dst2src_duration = int(nflow_instance.dst2src_duration_ms / 1000)
+            existing_flow.dst2src_packets = nflow_instance.dst2src_packets
+            existing_flow.dst2src_bytes = nflow_instance.dst2src_bytes
+            existing_flow.application_name = nflow_instance.application_name
+            existing_flow.application_category_name = nflow_instance.application_category_name
+            existing_flow.application_is_guessed = nflow_instance.application_is_guessed
+            existing_flow.application_confidence = nflow_instance.application_confidence
+            existing_flow.requested_server_name = nflow_instance.requested_server_name
+            existing_flow.client_fingerprint = nflow_instance.client_fingerprint
+            existing_flow.server_fingerprint = nflow_instance.server_fingerprint
+            existing_flow.user_agent = nflow_instance.user_agent
+            existing_flow.content_type = nflow_instance.content_type
+        else:
             new_flow = NFlowInterface(
                 uuid=nflow_instance.udps.flow_uuid,
                 expiration_id=nflow_instance.expiration_id,
@@ -80,7 +108,8 @@ class DatabaseClient:
                 client_fingerprint=nflow_instance.client_fingerprint,
                 server_fingerprint=nflow_instance.server_fingerprint,
                 user_agent=nflow_instance.user_agent,
-                content_type=nflow_instance.content_type
+                content_type=nflow_instance.content_type,
+                status=status
             )
             session.add(new_flow)
 

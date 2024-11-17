@@ -8,7 +8,7 @@ from lib.db.config.ConfigInterfaces import MySQLParams, ClickhouseParams
 
 
 class DatabaseManager:
-
+    
     @overload
     def __init__(self, db_type: Literal["mysql"], db_params: MySQLParams) -> None:
         ...
@@ -28,5 +28,9 @@ class DatabaseManager:
         else:
             raise ValueError("Unsupported database type")
 
-    def add_flow(self, nflow_instance: 'NFlowInstance') -> None:
-        self.client.add_flow(nflow_instance)
+    def add_flow(self, nflow_instance: 'NFlowInstance',status:int) -> None:
+        try:
+            self.client.add_flow(nflow_instance,status)
+        except Exception as e:
+            print(f"@TODO: IMPLEMENT QUEUE TO HANDLE SAVING ERRORS")
+            print(f"IS ONLY FOR DEV,Error adding flow to database: {e}")
